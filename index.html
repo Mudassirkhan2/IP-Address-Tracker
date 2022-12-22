@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>IP Address Tracker</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+    />
+    <link
+      rel="shortcut icon"
+      href="images/favicon-32x32.png"
+      type="image/x-icon"
+    />
+
+    <!-- map API CSS link  -->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
+      integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI="
+      crossorigin=""
+    />
+
+    <!-- map API script link  -->
+
+    <script
+      src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"
+      integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM="
+      crossorigin=""
+    ></script>
+  </head>
+
+  <body>
+    <main>
+      <div class="imgbg">
+        <img src="images/pattern-bg.png" alt="pattern-bg" />
+      </div>
+      <div id="map"></div>
+      <div class="main-container">
+        <h1>IP Address Tracker</h1>
+        <div class="search-container">
+          <input
+            type="text"
+            name="search"
+            id="search"
+            placeholder="Search for any IP address or domain"
+          />
+          <img src="images/icon-arrow.svg" alt="Search" / id="search-btn">
+        </div>
+        <div class="details-container">
+          <div class="">
+            <p>IP ADDRESS</p>
+            <span id="ip-address"> 192.212.174.101 </span>
+          </div>
+
+          <div class="">
+            <p>LOCATION</p>
+            <span id="location"> Brooklyn,Ny,10001 </span>
+          </div>
+
+          <div class="">
+            <p>TIMEZONE</p>
+            <span id="timezone"> UTC -5:00 </span>
+          </div>
+
+          <div class="">
+            <p>ISP</p>
+            <span id="ISP"> SpaceX StarLink </span>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
