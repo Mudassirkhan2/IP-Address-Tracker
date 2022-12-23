@@ -24,37 +24,9 @@ window.addEventListener("load", (event) => {
     })
     .then((data) => {
       console.log(data);
-      // ipaddressValue.innerText = `${data.ip}`;
-      locationValue.innerHTML = `${data.city},<br>${data.region},<br>${data.country}`;
-      ISPValue.innerText = `${data.org}`;
-      timezoneValue.innerText = `${data.timezone}`;
+      ipaddressValue.innerText = `${data.network}`;
 
-      // map api location marker icon
-      L.marker([`${data.latitude}`, `${data.longitude}`])
-        .addTo(map)
-        .bindPopup("A pretty CSS3 popup.<br> Easily customizable.")
-        .openPopup();
-
-      L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
-        maxZoom: 15,
-        attribution: "&copy; ",
-      }).addTo(map);
-
-      // setting  LatLng ( latitude and longitude) to display output on map
-      let popup = L.popup()
-        .setLatLng([`${data.latitude}`, `${data.longitude}`])
-        .setContent(`${data.city}`)
-        .openOn(map);
-
-      // function if a user clicks anywhere on the map to show LatLng
-      function onMapClick(e) {
-        popup
-          .setLatLng(e.latlng)
-          .setContent("You clicked the map at " + e.latlng.toString())
-          .openOn(map);
-      }
-
-      map.on("click", onMapClick);
+      apidata(data);
     })
 
     // error message if user enters wrong input
@@ -78,36 +50,8 @@ searchBtn.addEventListener("click", () => {
       .then((data) => {
         console.log(data);
         ipaddressValue.innerText = `${data.ip}`;
-        locationValue.innerHTML = `${data.city},<br>${data.region},<br>${data.country}`;
-        ISPValue.innerText = `${data.org}`;
-        timezoneValue.innerText = `${data.timezone}`;
 
-        // map api location marker icon
-        L.marker([`${data.latitude}`, `${data.longitude}`])
-          .addTo(map)
-          .bindPopup("A pretty CSS3 popup.<br> Easily customizable.")
-          .openPopup();
-
-        L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
-          maxZoom: 15,
-          attribution: "&copy; ",
-        }).addTo(map);
-
-        // setting  LatLng ( latitude and longitude) to display output on map
-        let popup = L.popup()
-          .setLatLng([`${data.latitude}`, `${data.longitude}`])
-          .setContent(`${data.city}`)
-          .openOn(map);
-
-        // function if a user clicks anywhere on the map to show LatLng
-        function onMapClick(e) {
-          popup
-            .setLatLng(e.latlng)
-            .setContent("You clicked the map at " + e.latlng.toString())
-            .openOn(map);
-        }
-
-        map.on("click", onMapClick);
+        apidata(data);
       })
 
       // error message if user enters wrong input
@@ -117,6 +61,36 @@ searchBtn.addEventListener("click", () => {
       });
   }
 });
-window.addEventListener("load", (event) => {
-  console.log("page is fully loaded");
-});
+
+function apidata(data) {
+  locationValue.innerHTML = `${data.city},<br>${data.region},<br>${data.country}`;
+  ISPValue.innerText = `${data.org}`;
+  timezoneValue.innerText = `${data.timezone}`;
+  // map api location marker icon
+  L.marker([`${data.latitude}`, `${data.longitude}`])
+    .addTo(map)
+    .bindPopup("A pretty CSS3 popup.<br> Easily customizable.")
+    .openPopup();
+
+  L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
+    maxZoom: 15,
+    attribution: "&copy; ",
+  }).addTo(map);
+
+  // setting  LatLng ( latitude and longitude) to display output on map
+  let popup = L.popup()
+    .setLatLng([`${data.latitude}`, `${data.longitude}`])
+    .setContent(`${data.city}`)
+    .openOn(map);
+
+  // function if a user clicks anywhere on the map to show LatLng
+  function onMapClick(e) {
+    popup
+      .setLatLng(e.latlng)
+      .setContent("You clicked the map at " + e.latlng.toString())
+      .openOn(map);
+  }
+
+  map.on("click", onMapClick);
+}
+
