@@ -2,8 +2,12 @@
 
 IP-Address-Tracker is a frontend mentors challenge .
 In this project i have used  API with combination of library:
- 1.IP Geolocation API
+ 
+ 1.ip-api
+
  2.(leafletjs.com) an open-source JavaScript library for mobile-friendly interactive maps
+ 
+ 
 IP Geolocation API provides information about location,timezone,isp and latitude and langitude of given IP address,leaflet isused to display 
 IP address map using latitude and langitude.
 
