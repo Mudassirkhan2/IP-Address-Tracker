@@ -14,11 +14,9 @@ L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
 // marker position
 L.marker([51.5, -0.09]).addTo(map).bindPopup("Brooklyn").openPopup();
 
-
-
-// to show the ip address of users when he load the page 
+// to show the ip address of users when he load the page
 window.addEventListener("load", (event) => {
-  let promise = fetch(`http://ip-api.com/json/`);
+  let promise = fetch(`https://ipapi.co/json/`);
 
   promise
     .then((response) => {
@@ -26,13 +24,13 @@ window.addEventListener("load", (event) => {
     })
     .then((data) => {
       console.log(data);
-      ipaddressValue.innerText = `${data.query}`;
-      locationValue.innerHTML = `${data.city},<br>${data.regionName},<br>${data.country}`;
-      ISPValue.innerText = `${data.isp}`;
+      // ipaddressValue.innerText = `${data.ip}`;
+      locationValue.innerHTML = `${data.city},<br>${data.region},<br>${data.country}`;
+      ISPValue.innerText = `${data.org}`;
       timezoneValue.innerText = `${data.timezone}`;
 
       // map api location marker icon
-      L.marker([`${data.lat}`, `${data.lon}`])
+      L.marker([`${data.latitude}`, `${data.longitude}`])
         .addTo(map)
         .bindPopup("A pretty CSS3 popup.<br> Easily customizable.")
         .openPopup();
@@ -44,7 +42,7 @@ window.addEventListener("load", (event) => {
 
       // setting  LatLng ( latitude and longitude) to display output on map
       let popup = L.popup()
-        .setLatLng([`${data.lat}`, `${data.lon}`])
+        .setLatLng([`${data.latitude}`, `${data.longitude}`])
         .setContent(`${data.city}`)
         .openOn(map);
 
@@ -71,7 +69,7 @@ searchBtn.addEventListener("click", () => {
   // storing input value
   let ipAddressGiven = searchInput.value.trim();
   if (ipAddressGiven) {
-    let promise = fetch(`http://ip-api.com/json/${ipAddressGiven}`);
+    let promise = fetch(`https://ipapi.co/${ipAddressGiven}/json/`);
 
     promise
       .then((response) => {
@@ -79,13 +77,13 @@ searchBtn.addEventListener("click", () => {
       })
       .then((data) => {
         console.log(data);
-        ipaddressValue.innerText = `${data.query}`;
-        locationValue.innerHTML = `${data.city},<br>${data.regionName},<br>${data.country}`;
-        ISPValue.innerText = `${data.isp}`;
+        ipaddressValue.innerText = `${data.ip}`;
+        locationValue.innerHTML = `${data.city},<br>${data.region},<br>${data.country}`;
+        ISPValue.innerText = `${data.org}`;
         timezoneValue.innerText = `${data.timezone}`;
 
         // map api location marker icon
-        L.marker([`${data.lat}`, `${data.lon}`])
+        L.marker([`${data.latitude}`, `${data.longitude}`])
           .addTo(map)
           .bindPopup("A pretty CSS3 popup.<br> Easily customizable.")
           .openPopup();
@@ -97,7 +95,7 @@ searchBtn.addEventListener("click", () => {
 
         // setting  LatLng ( latitude and longitude) to display output on map
         let popup = L.popup()
-          .setLatLng([`${data.lat}`, `${data.lon}`])
+          .setLatLng([`${data.latitude}`, `${data.longitude}`])
           .setContent(`${data.city}`)
           .openOn(map);
 
@@ -122,4 +120,3 @@ searchBtn.addEventListener("click", () => {
 window.addEventListener("load", (event) => {
   console.log("page is fully loaded");
 });
-
