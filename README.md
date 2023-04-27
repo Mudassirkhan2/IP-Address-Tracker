@@ -12,7 +12,7 @@ IP Geolocation API provides information about location,timezone,isp and latitude
 IP address map using latitude and langitude.
 
 
-Live url link : https://thriving-meringue-882917.netlify.app/
+Live url link : https://mudassirkhan2.github.io/IP-Address-Tracker-Vanilla-JS/
 
 DEsktop view : 
 
