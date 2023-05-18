@@ -1,4 +1,9 @@
-# IP-Address-Tracker-Vanilla-JS
+
+<h1 align="center">
+ IP-Address-Tracker-Vanilla-JS
+  <br>
+</h1>
+<h4 align="center"> a Website where user can see geolocation by entering ip address </h4>
 
 IP-Address-Tracker is a frontend mentors challenge .
 
@@ -14,7 +19,7 @@ IP Geolocation API provides information about location,timezone,isp and latitude
 IP address map using latitude and langitude.
 
 
-Live url link :[ https://mudassirkhan2.github.io/IP-Address-Tracker-Vanilla-JS/](https://mudassirkhan2.github.io/IP-Address-Tracker/)
+Live url link :  https://mudassirkhan2.github.io/IP-Address-Tracker/
 
 DEsktop view : 
 
