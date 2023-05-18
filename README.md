@@ -1,7 +1,9 @@
 # IP-Address-Tracker-Vanilla-JS
 
 IP-Address-Tracker is a frontend mentors challenge .
-In this project i have used  API with combination of library:
+
+
+ In this project i have used  API with combination of library:
  
  1.ip-api
 
@@ -12,7 +14,7 @@ IP Geolocation API provides information about location,timezone,isp and latitude
 IP address map using latitude and langitude.
 
 
-Live url link : https://mudassirkhan2.github.io/IP-Address-Tracker-Vanilla-JS/
+Live url link :[ https://mudassirkhan2.github.io/IP-Address-Tracker-Vanilla-JS/](https://mudassirkhan2.github.io/IP-Address-Tracker/)
 
 DEsktop view : 
 
